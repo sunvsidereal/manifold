@@ -46,6 +46,7 @@ export const PortfolioGraph = (props: {
   const { minDate, maxDate, minValue, maxValue } = useMemo(() => {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const minDate = min(points.map((d) => d.x))!
+    console.log('minDate:',minDate);
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const maxDate = max(points.map((d) => d.x))!
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
