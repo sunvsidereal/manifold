@@ -1,7 +1,7 @@
 'use client'
 import clsx from 'clsx'
 import { formatMoney } from 'common/util/format'
-import { min, last } from 'lodash'
+import { min, max, last } from 'lodash'
 import { memo, ReactNode, useState, useMemo } from 'react'
 import { usePortfolioHistory } from 'web/hooks/use-portfolio-history'
 import { Col } from '../layout/col'
@@ -79,7 +79,7 @@ export const PortfolioValueSection = memo(
     const setTimePeriod = (period: Period) => {
       if (period === 'allTime') {
         const earliestPoint = min(graphPoints.map((d) => d.x))!
-        const end = Date.now()
+        const end = max(graphPoints.map((d) => d.x)))!
         console.log('typeof earliestPoint:',(typeof earliestPoint))
         console.log('typeof end:',(typeof end))
 
@@ -87,7 +87,7 @@ export const PortfolioValueSection = memo(
 
       } else {
         const time = periodDurations[period]
-        const end = Date.now()
+        const end = max(graphPoints.map((d) => d.x))!
         const start = end - time
         console.log('typeof start:',(typeof start))
         console.log('typeof end:',(typeof end))
